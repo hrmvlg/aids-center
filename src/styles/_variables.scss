@@ -1,0 +1,29 @@
+:root {
+    --font-family-base: "Golos Text", sans-serif;
+
+    --color-accent: #d83b3b;
+    --color-dark: #2b2b2b;
+    --color-light: #fdfdfd;
+    --color-gray: #a8a8a8;
+    --color-light-gray: #f5f5f5;
+    --color-pink: #ffdee7;
+    
+    --color-vk-accent: rgb(0, 119, 255);
+    --color-tg-accent: rgb(0, 136, 204);
+    --color-viber-accent: rgb(115, 96, 242);
+    --color-ok-accent: rgb(237, 129, 43);
+    --color-youtube-accent: rgb(255, 0, 0);
+    
+    --color-logo-black: rgb(0, 0, 0);
+    --color-logo-red: rgb(218, 63, 63);
+    --color-border-gray: #eeeeee;
+
+    --border-gray: 2px solid var(--color-border-gray);
+    --border-gray-large: 3px solid var(--color-border-gray);
+    --border-radius: 12px;
+    --border-radius-large: 40px;
+
+    --main-container-width: 1676px;
+
+    --base-font-size: 20px;
+}

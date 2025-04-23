@@ -1,0 +1,29 @@
+.button {
+    @include reset-button;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    height: 64px;
+    padding: 20px 52px;
+    white-space: nowrap;
+
+    &-transparent {
+        border: 3px solid var(--color-accent);
+        background-color: transparent;
+
+        &:hover {
+            background-color: var(--color-accent);
+            color: var(--color-light);
+        }
+    }
+
+    &-red {
+        background-color: var(--color-accent);
+        color: var(--color-light);
+
+        &:hover {
+            color: var(--color-dark);
+            border: 3px solid var(--color-accent);
+            background-color: transparent;
+        }
+    }
+}

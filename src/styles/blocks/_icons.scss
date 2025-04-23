@@ -1,0 +1,37 @@
+svg.vk-icon,
+svg.tg-icon,
+svg.viber-icon,
+svg.ok-icon,
+svg.youtube-icon {
+    fill: var(--color-light);
+}
+
+svg.vk-icon {
+    &:hover {
+        fill: var(--color-vk-accent);
+    }
+}
+
+svg.tg-icon {
+    &:hover {
+        fill: var(--color-tg-accent);
+    }
+}
+
+svg.viber-icon {
+    &:hover {
+        fill: var(--color-viber-accent);
+    }
+}
+
+svg.ok-icon {
+    &:hover {
+        fill: var(--color-ok-accent);
+    }
+}
+
+svg.youtube-icon {
+    &:hover {
+        fill: var(--color-youtube-accent);
+    }
+}

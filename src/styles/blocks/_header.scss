@@ -1,0 +1,56 @@
+.header {
+    @include flex-row;
+    align-items: center;
+    height: 175px;
+    column-gap: 159px;
+
+    &__logo {
+        &-wrapper {
+            @include flex-row;
+            column-gap: 12px;
+            align-items: center;
+            width: 240px;
+            cursor: pointer;
+
+            &:hover {
+                svg.header__logo {
+
+                    & path:first-child {
+                        stroke: #DA3F3F;
+                    }
+
+                    & path:last-child {
+                        fill: black;
+                    }
+                }
+            }
+        }
+
+        &-text {
+            font-size: 32px;
+            font-weight: bold;
+        }
+    }
+
+    &__contacts {
+        @include flex-col;
+        row-gap: 15px;
+
+        &-link {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        &-work-hours {
+            color: var(--color-gray);
+            font-size: 20px;
+            font-weight: 500;
+        }
+    }
+
+    &__searchbar{
+        width: 407px;
+
+        @include 
+    }
+}

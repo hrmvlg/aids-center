@@ -1,0 +1,29 @@
+.navbar {
+    @include fluid-text(20, 14);
+    font-weight: bold;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-bottom: 40px;
+    overflow: scroll;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    &__list {
+        @include flex-row;
+        column-gap: 80px;
+
+        @include tablet {
+            column-gap: 60px;
+        }
+
+        @include mobile {
+            column-gap: 30px;
+        }
+    }
+
+    &__item {
+        white-space: nowrap;
+    }
+}
