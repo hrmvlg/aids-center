@@ -18,7 +18,7 @@
             column-gap: 60px;
         }
 
-        @include mobile-l {
+        @include tablet {
             column-gap: 30px;
         }
     }
