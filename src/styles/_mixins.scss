@@ -1,5 +1,17 @@
-@mixin fluid-text($max: 45, $min: 14) {
-    font-size: clamp(#{$max}px, #{$max / 1920 * 100}vw, #{$min}px);
+@mixin fluid-text($max: 32, $min: 14) {
+    font-size: clamp(#{$min}px,
+        #{calc(($max/ 1920) * 100)}vw,
+        #{$max}px);
+}
+
+@mixin fluid-size($maxW, $minW, $maxH, $minH) {
+    width: clamp(#{$minW}px,
+        #{calc(($maxW / 1920) * 100)}vw,
+        #{$maxW}px);
+
+    height: clamp(#{$minH}px,
+        #{calc(($maxH / 1920) * 100)}vw,
+        #{$maxH}px);
 }
 
 @mixin reset-link {
@@ -55,12 +67,18 @@
     overflow: hidden !important;
 }
 
-@mixin flex-row{
+@mixin flex-row {
     display: flex;
     flex-direction: row;
 }
 
-@mixin flex-col{
+@mixin flex-col {
     display: flex;
     flex-direction: column;
+}
+
+@mixin flex-justify-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
