@@ -6,12 +6,13 @@
     position: relative;
     margin-bottom: -100px;
     padding-top: 42px;
+    flex: 0 0 auto;
 
     display: grid;
     grid-template-areas: "information information contacts" "social social social";
     justify-content: center;
 
-    @include laptop {
+    @include laptop-l {
         grid-template-areas: "information contacts" "social social";
     }
 
@@ -51,7 +52,7 @@
             display: flex;
             flex-direction: column;
             row-gap: 16px;
-            width: 267px;
+            width: clamp(140px, calc((267/ 1920) * 100vw), 267px);
 
             &>.item__link {
                 cursor: pointer;
@@ -100,7 +101,6 @@
         position: relative;
         overflow: hidden;
 
-
         &-list {
             @include flex-row;
             column-gap: 32px;
@@ -109,25 +109,18 @@
 
         &-icon>svg {
             @include square(50px);
-            max-width: 50px;
-            max-height: 50px;
+            @include fluid-square(50, 20);
 
-            @include tablet {
-                @include square(30px);
-                max-width: 30px;
-                max-height: 30px;
-            }
-
-            @include mobile-l {
-                @include square(20px);
-                max-width: 20px;
-                max-height: 20px;
-            }
         }
 
         @include mobile-l {
             padding-top: 32px;
             padding-bottom: 32px;
+        }
+
+        @include laptop {
+            padding-top: 100px;
+            padding-bottom: 50px;
         }
 
         @include laptop-above {

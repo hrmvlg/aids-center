@@ -14,6 +14,15 @@
         #{$maxH}px);
 }
 
+@mixin fluid-square($max, $min) {
+
+    width: clamp(#{$min}px,
+        #{calc(($max/ 1920) * 100)}vw,
+        #{$max}px);
+
+    aspect-ratio: 1;
+}
+
 @mixin reset-link {
     color: inherit;
 

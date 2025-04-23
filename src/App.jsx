@@ -11,7 +11,9 @@ export default function App() {
     <div className="container">
       <Header />
       <Navbar />
-      {useRoutes(routes)}
+      <main className="wrapper">
+        {useRoutes(routes)}
+      </main>
       <Footer />
     </div>
   )
