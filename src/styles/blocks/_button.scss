@@ -1,8 +1,8 @@
 .button {
     @include reset-button;
+    @include flex-center;
     cursor: pointer;
     border-radius: var(--border-radius);
-    height: 64px;
     padding: 20px 52px;
     white-space: nowrap;
 

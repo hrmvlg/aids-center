@@ -1,0 +1,22 @@
+.form {
+    border-radius: var(--border-radius-large);
+    background-color: var(--color-light-gray);
+    @include flex-justify-space-between;
+
+    &__input {
+        padding: 20px 19px;
+        width: 100%;
+    }
+
+    &__label {
+        margin-right: 19px;
+
+        &>svg {
+            @include square(26px);
+
+            @include laptop-l {
+                @include square(20px);
+            }
+        }
+    }
+}

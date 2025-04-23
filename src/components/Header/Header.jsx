@@ -1,7 +1,8 @@
 import Button from "../Button/Button";
-import Search from "../Search/Search";
+import Input from "../Input/Input";
 import LogoIcon from "../../assets/icons/hiv-ind-logo.svg?react";
 import { Link } from "react-router";
+import SearchForm from '../Form/SearchForm';
 
 export default function Header() {
     return (
@@ -13,7 +14,7 @@ export default function Header() {
                 </div>
             </Link>
 
-            <div className="header__contacts">
+            <div className="header__contacts hidden-mobile">
                 <a className="header__contacts-link link" href='tel:+78125124797'>
                     +7 (812) 512-47-97
                 </a>
@@ -21,9 +22,9 @@ export default function Header() {
                     Работаем с 9:00 до 18:00
                 </span>
             </div>
-            <Search />
+            <SearchForm parentClass="header" />
             <Link to='/profile'>
-                <Button value="Личный кабинет" color="transparent" />
+                <Button parentClass="header" value="Личный кабинет" />
             </Link>
         </header>
     )

@@ -1,16 +1,40 @@
 .header {
-    @include flex-row;
+    justify-content: space-between;
     align-items: center;
     height: 175px;
-    column-gap: 159px;
+
+    @include fluid-text($max: 20, $min: 14);
+    @include flex-row;
+
+    @include tablet-above {
+        column-gap: 20px;
+    }
+
+    @include laptop-above {
+        column-gap: 50px;
+    }
+
+    @include laptop-l-above {
+        column-gap: 159px;
+    }
+
+    @include mobile-l {
+        height: 100px;
+
+    }
 
     &__logo {
+        @include fluid-size(49, 32, 93, 62);
+
         &-wrapper {
-            @include flex-row;
-            column-gap: 12px;
+            display: flex;
             align-items: center;
-            width: 240px;
+            column-gap: 12px;
             cursor: pointer;
+
+            @include laptop {
+                width: calc(240px / 1.5);
+            }
 
             &:hover {
                 svg.header__logo {
@@ -27,7 +51,7 @@
         }
 
         &-text {
-            font-size: 32px;
+            @include fluid-text($max: 32, $min: 16);
             font-weight: bold;
         }
     }
@@ -36,21 +60,29 @@
         @include flex-col;
         row-gap: 15px;
 
+        @media (max-width: 848px) {
+            @include visually-hidden;
+        }
+
         &-link {
             font-size: 24px;
             font-weight: bold;
+            @include fluid-text($max: 24, $min: 16);
         }
 
         &-work-hours {
             color: var(--color-gray);
             font-size: 20px;
             font-weight: 500;
+            @include fluid-text($max: 20, $min: 14);
         }
     }
 
-    &__searchbar{
-        width: 407px;
+    &__form {
+        @include fluid-size(407, 220, 62, 31);
+    }
 
-        @include 
+    &__button {
+        @include fluid-size(266, 133, 64, 32);
     }
 }

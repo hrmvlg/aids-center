@@ -1,3 +1,9 @@
-@import "normalize", "reset", "variables", "fonts", "globals", "mixins", "media";
+@import "normalize", "reset", "variables", "fonts", "globals", "mixins", "media", "utils";
 
-@import "blocks/header", "blocks/search", "blocks/button", "blocks/navbar", "blocks/footer", "blocks/icons";
+@import 
+"blocks/header", 
+"blocks/form", 
+"blocks/button", 
+"blocks/navbar", 
+"blocks/footer", 
+"blocks/icons";
