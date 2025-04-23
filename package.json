@@ -7,11 +7,17 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.7.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-redux": "^9.2.0",
+    "react-router": "^7.5.1",
+    "react-router-dom": "^7.5.1",
+    "vite-plugin-pages": "^0.33.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
@@ -21,7 +27,10 @@
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
-    "vite": "^5.4.10",
-    "vite-plugin-svgr": "^4.3.0"
+    "react-router-route-generator": "^0.1.3",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.2",
+    "vite-plugin-svgr": "^4.3.0",
+    "vitest": "^3.1.2"
   }
 }
