@@ -11,11 +11,11 @@
     grid-template-areas: "information information contacts" "social social social";
     justify-content: center;
 
-    @include desktop {
+    @include laptop {
         grid-template-areas: "information contacts" "social social";
     }
 
-    @include mobile {
+    @include mobile-l {
         @include flex-col;
         align-items: center;
     }
@@ -24,7 +24,7 @@
         display: flex;
         column-gap: clamp(20px, 14.32vw, 275px);
 
-        @include mobile {
+        @include mobile-l {
             @include flex-col;
             row-gap: 16px;
         }
@@ -37,12 +37,12 @@
             @include flex-row;
             column-gap: 16px;
 
-            @include desktop {
+            @include laptop {
                 @include flex-col;
                 row-gap: 32px;
             }
 
-            @include mobile {
+            @include mobile-l {
                 row-gap: 16px;
             }
         }
@@ -68,13 +68,13 @@
                 text-transform: uppercase;
                 margin-bottom: 16px;
 
-                @include desktop {
+                @include laptop-l {
                     margin-bottom: 8px;
                 }
             }
         }
 
-        @include mobile {
+        @include mobile-l {
             margin-bottom: 16px;
         }
     }
@@ -118,19 +118,19 @@
                 max-height: 30px;
             }
 
-            @include mobile {
+            @include mobile-l {
                 @include square(20px);
                 max-width: 20px;
                 max-height: 20px;
             }
         }
 
-        @include mobile {
+        @include mobile-l {
             padding-top: 32px;
             padding-bottom: 32px;
         }
 
-        @include tablet-above {
+        @include laptop-above {
 
             &::before,
             &::after {

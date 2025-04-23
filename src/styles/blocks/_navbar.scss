@@ -14,11 +14,11 @@
         @include flex-row;
         column-gap: 80px;
 
-        @include tablet {
+        @include laptop {
             column-gap: 60px;
         }
 
-        @include mobile {
+        @include mobile-l {
             column-gap: 30px;
         }
     }
