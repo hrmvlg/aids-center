@@ -1,6 +1,6 @@
-import Input from '../Input/Input';
-import SearchIcon from '../../assets/icons/search-icon.svg?react';
-import { useState } from 'react';
+import Input from "../common/Input/Input";
+import SearchIcon from "../../assets/icons/search-icon.svg?react";
+import { useState } from "react";
 
 export default function SearchForm({ parentClass }) {
     const [query, setQuery] = useState("");

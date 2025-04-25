@@ -1,8 +1,10 @@
+import Swiper from '../components/Swiper/Swiper';
+
 export default function HomePage() {
-    
+
     return (
-        <div>
-            главная
+        <div className="">
+            <Swiper />
         </div>
     )
 }

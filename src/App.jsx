@@ -1,6 +1,6 @@
-import Footer from "./components/Footer/Footer";
-import Header from './components/Header/Header';
-import Navbar from './components/Navbar/Navbar';
+import Header from './components/layout/Header/Header'
+import Navbar from './components/layout/Navbar/Navbar'
+import Footer from './components/layout/Footer/Footer'
 
 import { useRoutes } from 'react-router-dom';
 import routes from '~react-pages';

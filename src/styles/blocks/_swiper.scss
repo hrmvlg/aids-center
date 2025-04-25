@@ -1,0 +1,79 @@
+.swiper {
+    width: 100%;
+    height: 584px;
+    padding: 80px;
+    margin-bottom: 16px;
+    border-radius: var(--border-radius);
+
+    @include flex-col;
+    row-gap: 20px;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &__title {
+        @include fluid-text(45, 32);
+        font-weight: bold;
+        white-space: normal;
+        word-break: break-word;
+        max-width: 552px;
+        height: 108px;
+    }
+
+    &__description {
+        @include fluid-text(30, 20);
+        font-weight: bold;
+        margin-bottom: 28px;
+    }
+
+    &__button {
+        font-weight: bold;
+        margin-bottom: 88px;
+    }
+
+    &__controls {
+        @include flex-row;
+        align-items: center;
+        column-gap: 15px;
+    }
+
+    &__arrow {
+        cursor: pointer;
+        @include square(40px);
+
+        @include hover {
+            &>svg {
+                fill: var(--color-accent);
+
+                &>g {
+                    &>circle {
+                        stroke: none;
+                    }
+
+                    &>path {
+                        stroke: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    &__indicators {
+        @include flex-row;
+        column-gap: 12px;
+    }
+
+    &__indicator {
+        cursor: pointer;
+        display: block;
+        border-radius: 100px;
+        border: 2px solid var(--color-accent);
+        @include square(20px);
+
+        &--active {
+            background-color: var(--color-accent);
+        }
+    }
+
+}

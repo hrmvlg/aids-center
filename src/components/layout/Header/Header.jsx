@@ -1,8 +1,7 @@
-import Button from "../Button/Button";
-import Input from "../Input/Input";
-import LogoIcon from "../../assets/icons/hiv-ind-logo.svg?react";
+import Button from "../../common/Button/Button";
+import LogoIcon from "../../../assets/icons/hiv-ind-logo.svg?react";
 import { Link } from "react-router";
-import SearchForm from '../Form/SearchForm';
+import SearchForm from '../../Form/SearchForm';
 
 export default function Header() {
     return (

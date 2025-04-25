@@ -1,11 +1,12 @@
-import CallIcon from '../../assets/icons/contacts/call-icon.svg?react';
-import MailIcon from '../../assets/icons/contacts/email-icon.svg?react';
-import LocationIcon from '../../assets/icons/contacts/location-icon.svg?react';
-import VkIcon from '../../assets/icons/socials/vk-icon.svg?react';
-import TelegramIcon from '../../assets/icons/socials/tg-icon.svg?react';
-import ViberIcon from '../../assets/icons/socials/viber-icon.svg?react';
-import OkIcon from '../../assets/icons/socials/ok-icon.svg?react';
-import YoutubeIcon from '../../assets/icons/socials/youtube-icon.svg?react';
+import CallIcon from '../../../assets/icons/contacts/call-icon.svg?react';
+import MailIcon from '../../../assets/icons/contacts/email-icon.svg?react';
+import LocationIcon from '../../../assets/icons/contacts/location-icon.svg?react';
+import VkIcon from '../../../assets/icons/socials/vk-icon.svg?react';
+import TelegramIcon from '../../../assets/icons/socials/tg-icon.svg?react';
+import ViberIcon from '../../../assets/icons/socials/viber-icon.svg?react';
+import OkIcon from '../../../assets/icons/socials/ok-icon.svg?react';
+import YoutubeIcon from '../../../assets/icons/socials/youtube-icon.svg?react';
+
 import { Link } from "react-router"
 
 export default function Footer() {

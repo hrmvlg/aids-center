@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SubmitIcon from '../../assets/icons/right-arrow-subscribe.svg?react';
+import SubmitIcon from '../../../assets/icons/right-arrow-subscribe.svg?react';
 
 
 export default function Input({ parentClass, type, placeholder, className, value, handleChange }) {
