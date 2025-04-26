@@ -1,46 +1,91 @@
 .swiper {
     width: 100%;
+    min-width: 280px;
     height: 584px;
+
     padding: 80px;
     margin-bottom: 16px;
     border-radius: var(--border-radius);
-
-    @include flex-col;
-    row-gap: 20px;
 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
+    @include flex-col;
+
+    @include laptop {
+        padding: 40px;
+        height: calc(588px/1.7);
+    }
+
+    @include tablet {
+        background-image: none;
+        align-items: center;
+        text-align: center;
+    }
+
+    @include mobile-l {
+        padding: 20px;
+    }
+
+    &__wrapper {
+        row-gap: 20px;
+        @include flex-col;
+        @include fluid-size(552, 220, 108, 72);
+
+        @include laptop {
+            row-gap: 15px;
+        }
+
+        @include tablet {
+            align-items: center;
+        }
+    }
+
     &__title {
-        @include fluid-text(45, 32);
         font-weight: bold;
-        white-space: normal;
+        font-style: normal;
         word-break: break-word;
-        max-width: 552px;
-        height: 108px;
+        line-height: clamp(24px, calc((54/ 1920) * 100vw), 54px);
+        white-space: pre;
+
+        @include fluid-text(45, 20);
+
+        @include tablet {
+            line-height: normal;
+        }
     }
 
     &__description {
-        @include fluid-text(30, 20);
         font-weight: bold;
-        margin-bottom: 28px;
+        margin-bottom: 33px;
+        @include fluid-text(30, 14);
     }
 
     &__button {
         font-weight: bold;
         margin-bottom: 88px;
+
+        @include fluid-size(216, 60, 64, 33);
+
+        @include laptop {
+            margin-bottom: 44px;
+        }
     }
 
     &__controls {
-        @include flex-row;
         align-items: center;
         column-gap: 15px;
+        @include flex-row;
     }
 
     &__arrow {
         cursor: pointer;
         @include square(40px);
+
+        @include laptop {
+            @include square(30px);
+        }
 
         @include hover {
             &>svg {
@@ -60,8 +105,8 @@
     }
 
     &__indicators {
-        @include flex-row;
         column-gap: 12px;
+        @include flex-row;
     }
 
     &__indicator {
@@ -69,11 +114,15 @@
         display: block;
         border-radius: 100px;
         border: 2px solid var(--color-accent);
+
         @include square(20px);
+
+        @include laptop {
+            @include square(15px);
+        }
 
         &--active {
             background-color: var(--color-accent);
         }
     }
-
 }

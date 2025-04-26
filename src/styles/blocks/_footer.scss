@@ -2,6 +2,7 @@
     background-color: var(--color-dark);
     color: var(--color-light);
     width: 100vw;
+    min-width: 320px;
     left: calc(-50vw + 50%);
     position: relative;
     margin-bottom: -100px;
