@@ -1,0 +1,53 @@
+.card {
+    position: relative;
+    overflow: hidden;
+    background-color: var(--color-pink);
+    border-radius: var(--border-radius);
+    padding:
+        clamp(20px, calc((40 / 1920) * 100vw), 40px) clamp(20px, calc((44 / 1920) * 100vw), 44px) clamp(20px, calc((47 / 1920) * 100vw), 47px) clamp(20px, calc((40 / 1920) * 100vw), 40px);
+
+    @include flex-col;
+    justify-content: space-between;
+    @include fluid-size(548, 280, 391, 208);
+    min-width: 280px;
+
+    @media (max-width: 978px) {
+        width: 100%;
+    }
+
+    &__text-container {
+        margin-bottom: clamp(1rem, calc((30 / 1920) * 100vw), 1.9rem);
+    }
+
+    &__title {
+        font-weight: 600;
+        line-height: clamp(24px, calc((54/ 1920) * 100vw), 54px);
+        margin-bottom: 1rem;
+        @include fluid-text(45, 20);
+    }
+
+    &__subtitle {
+        font-weight: 400;
+        line-height: clamp(14px, calc((24 / 1920) * 100vw), 24px);
+        white-space: pre-wrap;
+    }
+
+    &__bottom-container {
+        display: flex;
+        justify-content: end;
+    }
+
+    &__image {
+        @include fluid-square(218, 100);
+
+        &-container {
+            position: absolute;
+            bottom: clamp(-30px, calc((-15/ 1920) * 100vw), -15px);
+            left: clamp(-25px, calc((-12.5 / 1920) * 100vw), -12.5px);
+        }
+    }
+
+    &__button {
+        @include fluid-size(215, 100, 64, 30);
+    }
+}

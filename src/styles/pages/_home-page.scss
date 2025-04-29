@@ -1,0 +1,17 @@
+.home-page {
+    &__cards {
+        @include flex-row;
+        justify-content: space-between;
+        gap: var(--gap);
+        margin-bottom: var(--margin-bottom);
+
+        @media(max-width: 1345px) {
+            gap: 10px;
+        }
+
+        @media (max-width:978px) {
+            @include flex-col;
+        }
+    }
+
+}
