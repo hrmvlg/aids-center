@@ -25,7 +25,7 @@ const banners = [
     },
     {
         id: 3,
-        title: 'Как передаётся ВИЧ?\n И как не передаётся?',
+        title: 'Как передаётся ВИЧ?\nИ как не передаётся?',
         description: 'Всё о передаче ВИЧ в нашей статье',
         url: 'src/assets/banners/banner-3.png',
         backgroundColor: '#f1c5a0',
@@ -39,7 +39,7 @@ const banners = [
         url: 'src/assets/banners/banner-4.png',
         backgroundColor: '#fbeecb',
         buttonValue: 'Читать',
-        path: 'news',
+        path: '/news',
     },
 ];
 
@@ -71,9 +71,9 @@ const Swiper = () => {
         return () => clearInterval(timer);
     }, [])
 
-    function fixWidows(text) {
-        return text.replace(/\s(в|с|о|и|а|на|В|С|О|И|А|На)\s/gu, '&#032;$1&nbsp;');
-    }
+    // function fixWidows(text) {
+    //     return text.replace(/\s(в|с|о|и|а|на|В|С|О|И|А|На)\s/gu, '&#032;$1&nbsp;');
+    // }
 
     return (
         <div
@@ -84,7 +84,7 @@ const Swiper = () => {
             }}
         >
             <div className="swiper__wrapper">
-                <h1 className="swiper__title" dangerouslySetInnerHTML={{ __html: fixWidows(banners[currentIndex].title).replace(/\n/g, '<br/>') }}></h1>
+                <h1 className="swiper__title" dangerouslySetInnerHTML={{ __html: banners[currentIndex].title.replace(/\n/g, '<br/>') }}></h1>
                 <p className="swiper__description">{banners[currentIndex].description}</p>
                 <Link to={`${banners[currentIndex].path}`}>
                     <Button parentClass={"swiper"} value={`${banners[currentIndex].buttonValue}`} />
