@@ -40,23 +40,23 @@ export default function Footer() {
                             <span className="contacts-item__icon">
                                 <CallIcon />
                             </span>
-                            <Link className="contacts-item__link link" to='tel:+78125124797'>
+                            <a className="contacts-item__link link" href='tel:+78125124797'>
                                 +7 (812) 512-47-97
-                            </Link>
+                            </a>
                         </li>
                         <li className="footer__contacts-item">
                             <span className="contacts-item__icon">
                                 <MailIcon />
                             </span>
-                            <Link className="contacts-item__link link" to='mailto:hiv.center@yandex.ru'>
+                            <a className="contacts-item__link link" href='mailto:hiv.center@yandex.ru'>
                                 hiv.center@yandex.ru
-                            </Link>
+                            </a>
                         </li>
                         <li className="footer__contacts-item">
                             <span className="contacts-item__icon">
                                 <LocationIcon />
                             </span>
-                            <Link className="contacts-item__link link" to='https://yandex.ru/maps/-/CHFAR2iZ'>Санкт-Петербург, ул. Малая <br />Конюшенная, д. 11, к.31</Link>
+                            <a className="contacts-item__link link" href="https://yandex.ru/maps/-/CHFAR2iZ" target="_blank">Санкт-Петербург, ул. Малая <br />Конюшенная, д. 11, к.31</a>
                         </li>
                     </ul>
                 </div>
@@ -64,28 +64,28 @@ export default function Footer() {
             <div className="footer__socials">
                 <ul className="footer__socials-list">
                     <li className="footer__socials-item">
-                        <Link to="#" className="footer__socials-icon">
+                        <a href="#" className="footer__socials-icon">
                             <VkIcon className="vk-icon" />
-                        </Link>
+                        </a>
                     </li>
                     <li className="footer__socials-item">
-                        <Link to="#" className="footer__socials-icon">
+                        <a href="#" className="footer__socials-icon">
                             <TelegramIcon className="tg-icon" />
-                        </Link> </li>
+                        </a> </li>
                     <li className="footer__socials-item">
-                        <Link to="#" className="footer__socials-icon">
+                        <a href="#" className="footer__socials-icon">
                             <ViberIcon className="viber-icon" />
-                        </Link>
+                        </a>
                     </li>
                     <li className="footer__socials-item">
-                        <Link to="#" className="footer__socials-icon">
+                        <a href="#" className="footer__socials-icon">
                             <OkIcon className="ok-icon" />
-                        </Link>
+                        </a>
                     </li>
                     <li className="footer__socials-item">
-                        <Link to="#" className="footer__socials-icon">
+                        <a href="#" className="footer__socials-icon">
                             <YoutubeIcon className="youtube-icon" />
-                        </Link>
+                        </a>
                     </li>
                 </ul>
             </div>
