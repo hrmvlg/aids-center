@@ -1,23 +1,23 @@
-@mixin fluid-text($max: 32, $min: 14) {
+@mixin fluid-text($max: 32, $min: 14, $screen: 1920) {
     font-size: clamp(#{$min}px,
-        #{calc(($max/ 1920) * 100)}vw,
+        #{calc(($max/ $screen) * 100)}vw,
         #{$max}px);
 }
 
-@mixin fluid-size($maxW, $minW, $maxH, $minH) {
+@mixin fluid-size($maxW, $minW, $maxH, $minH, $screen: 1920) {
     width: clamp(#{$minW}px,
-        #{calc(($maxW / 1920) * 100)}vw,
+        #{calc(($maxW / $screen) * 100)}vw,
         #{$maxW}px);
 
     height: clamp(#{$minH}px,
-        #{calc(($maxH / 1920) * 100)}vw,
+        #{calc(($maxH / $screen) * 100)}vw,
         #{$maxH}px);
 }
 
-@mixin fluid-square($max, $min) {
+@mixin fluid-square($max, $min, $screen: 1920) {
 
     width: clamp(#{$min}px,
-        #{calc(($max/ 1920) * 100)}vw,
+        #{calc(($max/ $screen) * 100)}vw,
         #{$max}px);
 
     aspect-ratio: 1;
