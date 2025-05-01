@@ -24,7 +24,7 @@ import HomeCard from "../../Cards/HomeCard";
 //     }
 // ];
 
-export default function HomeCardSection({ className }) {
+export default function HomeCardsSection({ className }) {
 
     const dispatch = useDispatch();
     const {
@@ -39,7 +39,6 @@ export default function HomeCardSection({ className }) {
         }
 
     }, [status, dispatch])
-
 
     //if (status === 'loading') return console.log("Загрузка...");
     if (status === 'failed') return console.log(`Ошибка: ${error}`);
