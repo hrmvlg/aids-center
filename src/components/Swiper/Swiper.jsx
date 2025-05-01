@@ -23,12 +23,11 @@ const Swiper = () => {
         }
     }, [status, dispatch]);
 
-    const handleResize = () => { dispatch(setIsTablet()) };
-
     useEffect(() => {
+        const handleResize = () => { dispatch(setIsTablet()) };
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
-    }, []);
+    }, [dispatch]);
 
     useEffect(() => {
         const timer = setInterval(() => dispatch(nextSlide()), 6000); // Смена слайда каждые 6 сек
