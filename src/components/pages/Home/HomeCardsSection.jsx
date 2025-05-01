@@ -45,7 +45,6 @@ export default function HomeCardsSection({ className }) {
 
     return (
         <div className={className}>
-            {console.log(homeCards)}
             {
                 homeCards.length > 0 &&
                 (
