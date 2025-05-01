@@ -1,20 +1,20 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchHomeCards } from "../../../features/cards/homeCardsSectionSlice";
-import HomeCard from "../../Cards/HomeCard";
+import { fetchHomeInfoCards } from "../../../features/cards/homeInfoCardsSectionSlice";
+import HomeInfoCard from "../../Cards/HomeInfoCard";
 
-export default function HomeCardsSection({ className }) {
+export default function HomeInfoCards({ className }) {
 
     const dispatch = useDispatch();
     const {
-        homeCards,
+        homeInfoCards,
         status,
         error
-    } = useSelector((state) => state.homeCardsSection);
+    } = useSelector((state) => state.homeInfoCards);
 
     useEffect(() => {
         if (status === 'idle') {
-            dispatch(fetchHomeCards());
+            dispatch(fetchHomeInfoCards());
         }
 
     }, [status, dispatch])
@@ -23,14 +23,14 @@ export default function HomeCardsSection({ className }) {
     if (status === 'failed') return console.log(`Ошибка: ${error}`);
 
     return (
-        <div className={className}>
+        <div className={`${className}__info-cards`}>
             {
-                homeCards.length > 0 &&
+                homeInfoCards.length > 0 &&
                 (
-                    homeCards.map((card) => (
-                        <HomeCard
+                    homeInfoCards.map((card) => (
+                        <HomeInfoCard
                             key={card.id}
-                            className="home-page__card"
+                            className="info-card"
                             title={card.title}
                             subtitle={card.subtitle}
                             iconUrl={card.iconUrl}

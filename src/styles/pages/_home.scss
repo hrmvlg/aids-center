@@ -1,5 +1,5 @@
-.home-page {
-    &__cards {
+.home {
+    &__info-cards, &__news{
         @include flex-row;
         justify-content: space-between;
         gap: var(--gap);
@@ -11,6 +11,12 @@
 
         @media (max-width:978px) {
             @include flex-col;
+        }
+    }
+
+    &__news{
+        &__title{
+
         }
     }
 

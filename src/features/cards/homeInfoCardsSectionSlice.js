@@ -2,8 +2,8 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../../firebase/firebase-config';
 
-export const fetchHomeCards = createAsyncThunk(
-    'homeCardsSection/fetchHomeCards',
+export const fetchHomeInfoCards = createAsyncThunk(
+    'homeInfoCards/fetchHomeInfoCards',
     async () => {
         try {
             const querySnapshot = await getDocs(collection(db, 'homePageCards'));
@@ -15,27 +15,27 @@ export const fetchHomeCards = createAsyncThunk(
         }
     });
 
-const homeCardsSectionSlice = createSlice({
-    name: 'homeCardsSection',
+const homeInfoCardsSlice = createSlice({
+    name: 'homeInfoCards',
     initialState: {
-        homeCards: [],
+        homeInfoCards: [],
         status: 'idle',
         error: null,
     },
     extraReducers: (builder) => {
         builder
-            .addCase(fetchHomeCards.pending, (state) => {
+            .addCase(fetchHomeInfoCards.pending, (state) => {
                 state.status = 'loading';
             })
-            .addCase(fetchHomeCards.fulfilled, (state, action) => {
+            .addCase(fetchHomeInfoCards.fulfilled, (state, action) => {
                 state.status = 'succeeded';
-                state.homeCards = action.payload;
+                state.homeInfoCards = action.payload;
             })
-            .addCase(fetchHomeCards.rejected, (state, action) => {
+            .addCase(fetchHomeInfoCards.rejected, (state, action) => {
                 state.status = 'failed';
                 state.error = action.error.message;
             });
     },
 });
 
-export default homeCardsSectionSlice.reducer;
+export default homeInfoCardsSlice.reducer;
