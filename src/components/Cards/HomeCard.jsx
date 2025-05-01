@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router";
 import Button from "../common/Button/Button";
 
-export default function Card({ title, subtitle, iconUrl, path }) {
+export default function HomeCard({ title, subtitle, iconUrl, path }) {
 
     const iconPath = new URL(`../../assets/icons/${iconUrl}`, import.meta.url).href;
 

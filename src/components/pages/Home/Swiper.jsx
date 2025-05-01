@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import { Link } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchSwiperCards, nextSlide, prevSlide, setCurrentIndex, setIsTablet } from '../../features/cards/swiperCardsSlice';
-import Button from '../common/Button/Button';
-import LeftArrow from '../../assets/icons/left-arrow-circle-icon.svg?react';
-import RightArrow from '../../assets/icons/right-arrow-circle-icon.svg?react';
+import { fetchSwiperCards, nextSlide, prevSlide, setCurrentIndex, setIsTablet } from '../../../features/cards/swiperCardsSlice';
+import Button from '../../common/Button/Button';
+import LeftArrow from '../../../assets/icons/left-arrow-circle-icon.svg?react';
+import RightArrow from '../../../assets/icons/right-arrow-circle-icon.svg?react';
 
-const Swiper = () => {
+export default function Swiper({ className }) {
 
     const dispatch = useDispatch();
     const {
@@ -40,7 +40,7 @@ const Swiper = () => {
     return (
         swiperCards.length > 0 && (
             <div
-                className="swiper"
+                className={`${className} swiper`}
                 style={{
                     backgroundImage: isTablet ? 'none' : `url(${swiperCards[currentIndex].url})`,
                     backgroundColor: `${swiperCards[currentIndex].backgroundColor}`,
@@ -74,6 +74,4 @@ const Swiper = () => {
             </div>
         )
     );
-};
-
-export default Swiper;
+}
