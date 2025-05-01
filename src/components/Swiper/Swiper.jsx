@@ -1,114 +1,79 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router';
-import RightArrow from '../../assets/icons/right-arrow-circle-icon.svg?react';
-import LeftArrow from '../../assets/icons/left-arrow-circle-icon.svg?react';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchSwiperCards, nextSlide, prevSlide, setCurrentIndex, setIsTablet } from '../../features/cards/swiperCardsSlice';
 import Button from '../common/Button/Button';
-
-const banners = [
-    {
-        id: 1,
-        title: "Сдай тест на ВИЧ\nуже сегодня",
-        description: 'Анонимный экспресс тест в центре',
-        url: 'src/assets/banners/banner-1.png',
-        backgroundColor: '#fbdce4',
-        buttonValue: 'Подробнее',
-        path: '/profile',
-    },
-    {
-        id: 2,
-        title: 'Узнай о профилактике\nВИЧ инфекции и PReP',
-        description: 'Подробная статья на нашем сайте',
-        url: 'src/assets/banners/banner-2.png',
-        backgroundColor: '#dcebfb',
-        buttonValue: 'Подробнее',
-        path: '/prevention',
-    },
-    {
-        id: 3,
-        title: 'Как передаётся ВИЧ?\nИ как не передаётся?',
-        description: 'Всё о передаче ВИЧ в нашей статье',
-        url: 'src/assets/banners/banner-3.png',
-        backgroundColor: '#f1c5a0',
-        buttonValue: 'Подробнее',
-        path: '/transmission',
-    },
-    {
-        id: 4,
-        title: 'Будьте в курсе событий\nЧитайте наши новости',
-        description: 'Новости из медицинского мира',
-        url: 'src/assets/banners/banner-4.png',
-        backgroundColor: '#fbeecb',
-        buttonValue: 'Читать',
-        path: '/news',
-    },
-];
+import LeftArrow from '../../assets/icons/left-arrow-circle-icon.svg?react';
+import RightArrow from '../../assets/icons/right-arrow-circle-icon.svg?react';
 
 const Swiper = () => {
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [isTablet, setIsTablet] = useState(window.innerWidth < 768);
 
-    const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % banners.length);
-    };
-
-    const prevSlide = () => {
-        setCurrentIndex((prevIndex) =>
-            prevIndex === 0 ? banners.length - 1 : prevIndex - 1
-        );
-    };
+    const dispatch = useDispatch();
+    const {
+        swiperCards,
+        currentIndex,
+        isTablet,
+        status,
+        error
+    } = useSelector((state) => state.swiper);
 
     useEffect(() => {
-        const handleResize = () => {
-            setIsTablet(window.innerWidth < 768);
-        };
+        if (status === 'idle') {
+            dispatch(fetchSwiperCards());
+        }
+    }, [status, dispatch]);
 
+    const handleResize = () => { dispatch(setIsTablet()) };
+
+    useEffect(() => {
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     useEffect(() => {
-        const timer = setInterval(nextSlide, 6000); // Смена слайда каждые 6 сек
+        const timer = setInterval(() => dispatch(nextSlide()), 6000); // Смена слайда каждые 6 сек
         return () => clearInterval(timer);
-    }, [])
+    }, [dispatch])
 
-    // function fixWidows(text) {
-    //     return text.replace(/\s(в|с|о|и|а|на|В|С|О|И|А|На)\s/gu, '&#032;$1&nbsp;');
-    // }
+    // if (status === 'loading') return console.log("Загрузка...");
+    if (status === 'failed') return console.log(`Ошибка: ${error}`);
 
     return (
-        <div
-            className="swiper"
-            style={{
-                backgroundImage: isTablet ? 'none' : `url(${banners[currentIndex].url})`,
-                backgroundColor: `${banners[currentIndex].backgroundColor}`,
-            }}
-        >
-            <div className="swiper__wrapper">
-                <h1 className="swiper__title" dangerouslySetInnerHTML={{ __html: banners[currentIndex].title.replace(/\n/g, '<br/>') }}></h1>
-                <p className="swiper__description">{banners[currentIndex].description}</p>
-                <Link to={`${banners[currentIndex].path}`}>
-                    <Button parentClass={"swiper"} value={`${banners[currentIndex].buttonValue}`} />
-                </Link>
-                <div className="swiper__controls">
-                    <button className="swiper__arrow swiper__arrow--left" onClick={prevSlide}>
-                        <LeftArrow />
-                    </button>
-                    <div className="swiper__indicators">
-                        {banners.map((_, index) => (
-                            <span
-                                key={index}
-                                className={`swiper__indicator ${index === currentIndex ? 'swiper__indicator--active' : ''
-                                    }`}
-                                onClick={() => setCurrentIndex(index)}
-                            ></span>
-                        ))}
+        swiperCards.length > 0 && (
+            <div
+                className="swiper"
+                style={{
+                    backgroundImage: isTablet ? 'none' : `url(${swiperCards[currentIndex].url})`,
+                    backgroundColor: `${swiperCards[currentIndex].backgroundColor}`,
+                }}
+            >
+                <div className="swiper__wrapper">
+                    <h1 className="swiper__title" dangerouslySetInnerHTML={{ __html: swiperCards[currentIndex].title.replace(/\n/g, '<br/>') }}></h1>
+                    <p className="swiper__description">{swiperCards[currentIndex].description}</p>
+                    <Link to={`${swiperCards[currentIndex].path}`}>
+                        <Button parentClass={"swiper"} value={`${swiperCards[currentIndex].buttonValue}`} />
+                    </Link>
+                    <div className="swiper__controls">
+                        <button className="swiper__arrow swiper__arrow--left" onClick={() => dispatch(prevSlide())}>
+                            <LeftArrow />
+                        </button>
+                        <div className="swiper__indicators">
+                            {swiperCards.map((_, index) => (
+                                <span
+                                    key={index}
+                                    className={`swiper__indicator ${index === currentIndex ? 'swiper__indicator--active' : ''
+                                        }`}
+                                    onClick={() => dispatch(setCurrentIndex(index))}
+                                ></span>
+                            ))}
+                        </div>
+                        <button className="swiper__arrow swiper__arrow--right" onClick={() => dispatch(nextSlide())}>
+                            <RightArrow />
+                        </button>
                     </div>
-                    <button className="swiper__arrow swiper__arrow--right" onClick={nextSlide}>
-                        <RightArrow />
-                    </button>
                 </div>
             </div>
-        </div>
+        )
     );
 };
 
