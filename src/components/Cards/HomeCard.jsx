@@ -2,12 +2,12 @@
 import { Link } from "react-router";
 import Button from "../common/Button/Button";
 
-export default function HomeCard({ title, subtitle, iconUrl, path }) {
+export default function HomeCard({ title, subtitle, iconUrl, path, className }) {
 
     const iconPath = new URL(`../../assets/icons/${iconUrl}`, import.meta.url).href;
 
     return (
-        <article className="card">
+        <article className={`${className} card`}>
             <header className="card__text-container">
                 <h2 className="card__title">{title}</h2>
                 <p className="card__subtitle" dangerouslySetInnerHTML={{ __html: subtitle.replace(/\n/g, '<br/>') }}></p>
