@@ -40,7 +40,7 @@ export default function Swiper({ className }) {
     return (
         swiperCards.length > 0 && (
             <div
-                className={`${className} swiper`}
+                className={`${className}__swiper swiper`}
                 style={{
                     backgroundImage: isTablet ? 'none' : `url(${swiperCards[currentIndex].url})`,
                     backgroundColor: `${swiperCards[currentIndex].backgroundColor}`,
