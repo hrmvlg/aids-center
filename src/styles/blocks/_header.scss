@@ -1,26 +1,14 @@
 .header {
     justify-content: space-between;
     align-items: center;
+    column-gap: 20px;
     height: 175px;
 
     @include fluid-text($max: 20, $min: 14);
     @include flex-row;
 
-    @include tablet-above {
-        column-gap: 20px;
-    }
-
-    @include laptop-above {
-        column-gap: 50px;
-    }
-
-    @include laptop-l-above {
-        column-gap: 159px;
-    }
-
     @include tablet {
         height: 80px;
-
     }
 
     &__logo {
