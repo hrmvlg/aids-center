@@ -11,13 +11,13 @@ export default function SearchForm({ parentClass }) {
 
     return (
         <search role='search'>
-            <form className={`${parentClass}__form form ${parentClass == "header" ? "hidden-mobile" : ""}`}
+            <form className={`${parentClass}__form form form--gray ${parentClass == "header" ? "hidden-mobile" : ""}`}
                 action=''
             >
                 <Input
-                    className="form__input"
-                    type={"search"}
-                    placeholder={"Поиск по сайту"}
+                    color="gray"
+                    type="search"
+                    placeholder="Поиск по сайту"
                     value={query}
                     handleChange={handleChange}
                 />

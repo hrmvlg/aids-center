@@ -1,15 +1,31 @@
 .form {
     border-radius: var(--border-radius-large);
-    background-color: var(--color-light-gray);
     @include flex-justify-space-between;
+
+    &--white {
+        background-color: var(--color-white);
+    }
+
+    &--gray {
+        background-color: var(--color-light-gray);
+    }
 
     &__input {
         padding: 20px 19px;
         width: 100%;
 
-        &::placeholder{
-            color: var(--color-gray);
+        &--gray {
+            &::placeholder {
+                color: var(--color-gray);
+            }
         }
+
+        &--white {
+            &::placeholder {
+                color: #D9D9D9;
+            }
+        }
+
     }
 
     &__label {
