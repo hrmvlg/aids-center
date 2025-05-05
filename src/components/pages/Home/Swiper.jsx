@@ -56,11 +56,12 @@ export default function Swiper({ className }) {
                         <button className="swiper__arrow swiper__arrow--left" onClick={() => dispatch(prevSlide())}>
                             <LeftArrow />
                         </button>
-                        <div className="swiper__indicators">
+                        
+                        <div className="swiper__pagination-bullets">
                             {swiperCards.map((_, index) => (
                                 <span
                                     key={index}
-                                    className={`swiper__indicator ${index === currentIndex ? 'swiper__indicator--active' : ''
+                                    className={`swiper__pagination-bullet ${index === currentIndex ? 'swiper__pagination-bullet--active' : ''
                                         }`}
                                     onClick={() => dispatch(setCurrentIndex(index))}
                                 ></span>

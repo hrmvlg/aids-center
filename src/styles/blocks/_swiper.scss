@@ -102,12 +102,12 @@
         }
     }
 
-    &__indicators {
+    &__pagination-bullets {
         column-gap: 12px;
         @include flex-row;
     }
 
-    &__indicator {
+    &__pagination-bullet {
         cursor: pointer;
         display: block;
         border-radius: 100px;
