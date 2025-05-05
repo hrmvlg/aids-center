@@ -7,13 +7,13 @@
     --color-gray: #a8a8a8;
     --color-light-gray: #f5f5f5;
     --color-pink: #ffdee7;
-    
+
     --color-vk-accent: rgb(0, 119, 255);
     --color-tg-accent: rgb(0, 136, 204);
     --color-viber-accent: rgb(115, 96, 242);
     --color-ok-accent: rgb(237, 129, 43);
     --color-youtube-accent: rgb(255, 0, 0);
-    
+
     --color-logo-black: rgb(0, 0, 0);
     --color-logo-red: rgb(218, 63, 63);
     --color-border-gray: #eeeeee;
@@ -27,7 +27,7 @@
 
     --base-font-size: 20px;
 
-    --margin-bottom: 64px;
+    --margin-bottom: clamp(32px, calc((64/1920)*100vw), 64px);
     --margin-bottom-s: calc(var(--margin-bottom)/2);
     --margin-bottom-l: calc(var(--margin-bottom)*2);
 
