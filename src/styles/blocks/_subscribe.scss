@@ -1,0 +1,11 @@
+.subscribe {
+    &__title {
+        font-weight: 700;
+        text-transform: uppercase;
+        @include fluid-text(24, 16);
+    }
+
+    &__form {
+        @include fluid-size(464, 234, 73, 36.5);
+    }
+}
