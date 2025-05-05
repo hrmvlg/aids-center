@@ -39,4 +39,10 @@
             }
         }
     }
+
+    &__button {
+        cursor: pointer;
+        height: 100%;
+        padding-right: 19px;
+    }
 }
