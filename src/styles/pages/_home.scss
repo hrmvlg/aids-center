@@ -1,5 +1,5 @@
 .home {
-    &__info-cards, &__news{
+    &__info-cards {
         @include flex-row;
         justify-content: space-between;
         gap: var(--gap);
@@ -13,11 +13,40 @@
             @include flex-col;
         }
     }
+}
 
-    &__news{
-        &__title{
+.home-news {
+    margin-bottom: 23px;
+    row-gap: clamp(15px, 2vw, 19px);
+    @include flex-col;
 
+    &__title {
+        font-weight: 700;
+        line-height: clamp(30px, 5vw, 54px);
+        @include fluid-text(45, 20);
+    }
+
+    &__cards {
+        margin-bottom: clamp(6px, 2vw, 17px);
+
+        overflow-x: auto;
+        overflow-y: hidden;
+        scrollbar-width: 0px;
+        -ms-overflow-style: none;
+
+        justify-content: space-between;
+        column-gap: 17px;
+        @include flex-row;
+
+        &::-webkit-scrollbar {
+            display: none;
         }
     }
 
+    &__link {
+        color: var(--color-accent);
+        line-height: 24px;
+        font-weight: 500;
+        @include fluid-text(20, 16);
+    }
 }
