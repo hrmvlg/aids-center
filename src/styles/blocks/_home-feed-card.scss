@@ -1,9 +1,6 @@
-.home-news-card {
+.home-feed-card {
     height: 100%;
-
-    @include tablet {
-        @include fluid-size(547, 280, 462, 275);
-    }
+    max-width: 547px;
 
     &__image {
         max-width: 100%;
@@ -41,7 +38,8 @@
         @include fluid-text(24);
     }
 
-    &__description {
+    &__description,
+    &__short-description {
         max-height: 123px;
         white-space: wrap;
         letter-spacing: 0.02em;
@@ -53,6 +51,11 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         margin-bottom: clamp(12px, 2vw, 24px);
+    }
+
+    &__short-description {
+        color: var(--color-gray);
+        margin-bottom: 8px;
     }
 
     &__date {
