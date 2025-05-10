@@ -15,7 +15,7 @@ export const fetchEvents = createAsyncThunk(
         }
     });
 
-const eventsSlice = createSlice({
+const eventsSectionSlice = createSlice({
     name: 'events',
     initialState: {
         events: [],
@@ -38,4 +38,4 @@ const eventsSlice = createSlice({
     },
 });
 
-export default eventsSlice.reducer;
+export default eventsSectionSlice.reducer;
