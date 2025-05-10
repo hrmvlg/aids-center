@@ -10,18 +10,20 @@ export default function SearchForm({ parentClass }) {
     };
 
     return (
+        //TODO убрать тег search так как валидатор ругается
         <search role='search'>
             <form className={`${parentClass}__form form form--gray ${parentClass == "header" ? "hidden-mobile" : ""}`}
                 action=''
             >
                 <Input
+                    name="search"
                     color="gray"
                     type="search"
                     placeholder="Поиск по сайту"
                     value={query}
                     handleChange={handleChange}
                 />
-                <label className='form__label' htmlFor="input">
+                <label className='form__label' htmlFor="search">
                     <span className='visually-hidden'>Поиск по сайту</span>
                     <SearchIcon />
                 </label>

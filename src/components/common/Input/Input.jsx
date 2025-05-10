@@ -1,17 +1,27 @@
-import { useState } from "react";
-import SubmitIcon from '../../../assets/icons/right-arrow-subscribe.svg?react';
+/* eslint-disable react/prop-types */
 
+export default function Input(props) {
 
-export default function Input({ parentClass, type, placeholder, className, value, handleChange }) {
+    const {
+        name,
+        type,
+        placeholder,
+        color,
+        value,
+        handleChange,
+        required
+    } = props;
 
     return (
         <input
+            id={name}
+            name={name}
             type={type}
             value={value}
             onChange={handleChange}
             placeholder={placeholder}
-            className={className}
-            id="input"
+            className={`form__input ${color ? 'form__input--' + color : ''}`}
+            required={required}
         />
     )
 }
